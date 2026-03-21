@@ -29,6 +29,7 @@ type Service = {
 type Metric = { value: string; label: string };
 type Outcome = { value: string; title: string; text: string };
 type WorkflowItem = { step: string; title: string; text: string };
+type ProblemItem = { title: string; text: string };
 
 type Copy = {
   navItems: NavItem[];
@@ -69,6 +70,12 @@ type Copy = {
   outcomes: Outcome[];
   workflow: WorkflowItem[];
   sectors: string[];
+  problemsLabel: string;
+  problemsTitle: string;
+  problemsText: string;
+  problemsBridge: string;
+  problemsCta: string;
+  problems: ProblemItem[];
 };
 
 const copyByLang: Record<Lang, Copy> = {
@@ -76,6 +83,7 @@ const copyByLang: Record<Lang, Copy> = {
     navItems: [
       { label: "Chi siamo", href: "#chi-siamo" },
       { label: "Servizi", href: "#servizi" },
+      { label: "Cosa risolviamo", href: "#problems" },
       { label: "Risultati", href: "#risultati" },
       { label: "Metodo", href: "#metodo" },
       { label: "Ambiti", href: "#settori" },
@@ -116,6 +124,14 @@ const copyByLang: Record<Lang, Copy> = {
     outcomesTitle: "Cosa cambia quando l’IT viene governato meglio.",
     outcomesText:
       "L’obiettivo non è aggiungere complessità, ma ridurre attriti operativi, aumentare visibilità e dare alla direzione un modello più chiaro per decidere. I risultati attesi sono concreti, leggibili e progressivi.",
+    problemsLabel: "Cosa risolviamo",
+    problemsTitle: "Problemi concreti che aiutiamo a rimettere sotto controllo.",
+    problemsText:
+      "Interveniamo dove l’IT genera attriti operativi, poca visibilità o dipendenze difficili da governare. L’obiettivo è trasformare criticità ricorrenti in un modello più chiaro, misurabile e sostenibile.",
+    problemsBridge:
+      "Se ti riconosci anche solo in uno di questi punti, significa che manca una governance IT strutturata.",
+    problemsCta: "Parliamo del tuo contesto IT",
+
     methodLabel: "Metodo",
     methodTitle: "Un processo in 4 fasi, semplice da leggere e concreto da applicare.",
     methodText:
@@ -125,7 +141,7 @@ const copyByLang: Record<Lang, Copy> = {
     sectorsText:
       "Il modello iTeamProject è particolarmente efficace in contesti dove l’IT deve supportare operazioni quotidiane, sedi multiple, fornitori esterni, requisiti di controllo e crescita organizzativa.",
     contactLabel: "Contatto",
-    contactTitle: "Analizziamo il tuo contesto IT e definiamo le priorità operative.",
+    contactTitle: "Prima valutazione operativa senza impegno",
     contactText:
       "Possiamo impostare una prima valutazione del modello attuale, evidenziare criticità, dipendenze e aree di miglioramento, costruendo un percorso concreto di governance e controllo.",
     emailLabel: "Email",
@@ -215,6 +231,32 @@ const copyByLang: Record<Lang, Copy> = {
         text: "Reporting, revisione periodica, piano di miglioramento e supporto alla direzione per il controllo nel tempo.",
       },
     ],
+    problems: [
+      {
+        title: "Fornitori IT difficili da governare",
+        text: "Più fornitori, responsabilità poco chiare, escalation incerte e qualità del servizio non sempre sotto controllo.",
+      },
+      {
+        title: "Incident e richieste gestiti senza processo",
+        text: "Urgenze, ticket e problemi operativi affrontati in modo reattivo, senza un flusso strutturato e prevedibile.",
+      },
+      {
+        title: "Nessuna visibilità su KPI e SLA",
+        text: "Mancano indicatori, livelli di servizio e reporting utili per capire se l’IT sta realmente performando bene.",
+      },
+      {
+        title: "Governance IT non definita",
+        text: "Ruoli, priorità, responsabilità e processi non formalizzati, con conseguente lentezza decisionale e ambiguità operative.",
+      },
+      {
+        title: "Coordinamento tecnico inefficace",
+        text: "Attività IT non presidiate in modo centralizzato, con team e fornitori poco allineati tra loro.",
+      },
+      {
+        title: "IT percepito come costo, non come leva",
+        text: "L’IT fatica a supportare le decisioni aziendali perché manca una visione leggibile, misurabile e orientata al miglioramento.",
+      },
+    ],
     sectors: [
       "PMI e aziende multi-sede",
       "Retail e distribuzione",
@@ -228,6 +270,7 @@ const copyByLang: Record<Lang, Copy> = {
     navItems: [
       { label: "About", href: "#chi-siamo" },
       { label: "Services", href: "#servizi" },
+      { label: "What we solve", href: "#problems" },
       { label: "Outcomes", href: "#risultati" },
       { label: "Method", href: "#metodo" },
       { label: "Sectors", href: "#settori" },
@@ -268,6 +311,14 @@ const copyByLang: Record<Lang, Copy> = {
     outcomesTitle: "What changes when IT is governed better.",
     outcomesText:
       "The goal is not to add complexity, but to reduce operational friction, increase visibility and give leadership a clearer model for decision-making. Expected outcomes are concrete, readable and progressive.",
+    problemsLabel: "What we solve",
+    problemsTitle: "Operational issues we help bring back under control.",
+    problemsText:
+      "We intervene where IT creates friction, poor visibility or difficult-to-manage dependencies. The goal is to turn recurring issues into a clearer, measurable and sustainable operating model.",
+    problemsBridge:
+      "If you recognize even one of these issues, it usually means structured IT governance is missing.",
+    problemsCta: "Let’s discuss your IT context",
+
     methodLabel: "Method",
     methodTitle: "A 4-step process, simple to understand and practical to apply.",
     methodText:
@@ -277,7 +328,7 @@ const copyByLang: Record<Lang, Copy> = {
     sectorsText:
       "The iTeamProject model is particularly effective where IT must support daily operations, multiple locations, external vendors, control requirements and organizational growth.",
     contactLabel: "Contact",
-    contactTitle: "Let’s review your IT context and define operational priorities.",
+    contactTitle: "Initial operational assessment with no obligation",
     contactText:
       "We can set up an initial assessment of the current operating model, highlight critical issues, dependencies and improvement areas, and build a concrete governance and control path.",
     emailLabel: "Email",
@@ -365,6 +416,32 @@ const copyByLang: Record<Lang, Copy> = {
         step: "04",
         title: "Continuous monitoring",
         text: "Reporting, periodic review, improvement plan and support to leadership for ongoing control.",
+      },
+    ],
+    problems: [
+      {
+        title: "IT vendors that are hard to govern",
+        text: "Multiple providers, unclear accountability, uncertain escalations and service quality that is not fully under control.",
+      },
+      {
+        title: "Incidents and requests handled without process",
+        text: "Urgencies, tickets and operational issues managed reactively, without a structured and predictable flow.",
+      },
+      {
+        title: "No visibility on KPIs and SLAs",
+        text: "Missing indicators, service levels and reporting make it difficult to understand whether IT is truly performing well.",
+      },
+      {
+        title: "Undefined IT governance",
+        text: "Roles, priorities, responsibilities and processes are not formalized, leading to ambiguity and slower decision-making.",
+      },
+      {
+        title: "Ineffective technical coordination",
+        text: "IT activities are not centrally orchestrated, with teams and vendors not fully aligned.",
+      },
+      {
+        title: "IT perceived as a cost, not a lever",
+        text: "IT struggles to support business decisions because visibility, measurability and governance are still weak.",
       },
     ],
     sectors: [
@@ -589,6 +666,42 @@ export default function ITeamProjectWebsiteV2() {
         </div>
       </section>
 
+      <section id="problems" className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">{t.problemsLabel}</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight leading-tight text-slate-950 sm:text-4xl">{t.problemsTitle}</h2>
+            <p className="mt-4 text-base font-normal leading-8 text-slate-600">{t.problemsText}</p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {t.problems.map((item) => (
+              <Card
+                key={item.title}
+                className="rounded-3xl border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:border-emerald-200 hover:shadow-lg"
+              >
+                <CardContent className="p-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50">
+                    <CheckCircle2 className="h-6 w-6 text-emerald-700" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-10 rounded-[2rem] border border-emerald-100 bg-emerald-50/50 p-8">
+            <p className="text-base font-medium leading-8 text-slate-700">{t.problemsBridge}</p>
+            <div className="mt-6">
+              <Button asChild className="rounded-2xl bg-slate-950 px-6 py-6 text-sm text-white transition-all duration-200 hover:bg-slate-900 hover:scale-[1.03] hover:shadow-lg active:scale-[0.98]">
+                <a href="#cta">{t.problemsCta}</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="risultati" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
@@ -665,7 +778,7 @@ export default function ITeamProjectWebsiteV2() {
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">{t.contactLabel}</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">{t.contactTitle}</h2>
+              <h2 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight leading-tight sm:text-4xl">{t.contactTitle}</h2>
               <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">{t.contactText}</p>
             </div>
 
