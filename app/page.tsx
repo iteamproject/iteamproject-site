@@ -827,6 +827,22 @@ export default function ITeamProjectWebsiteV2() {
           </div>
           <div>iTeamProject S.n.c. | Via Cassia, 4 – 50124 Firenze (FI) | P. IVA 07518790485 | Codice Univoco M5UXCR1</div>
           <div>info@iteamproject.it | iteamproject@pec.it</div>
+
+          <div className="flex flex-wrap gap-4 text-sm">
+            <a
+              href="/privacy-policy"
+              className="transition hover:text-emerald-600"
+            >
+              Privacy Policy
+            </a>
+
+            <a
+              href="/cookie-policy"
+              className="transition hover:text-emerald-600"
+            >
+              Cookie Policy
+            </a>
+          </div>
         </div>
       </footer>
 
