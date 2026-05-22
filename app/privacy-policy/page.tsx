@@ -6,7 +6,34 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-800">
+    <>
+      <header className="sticky top-0 z-50 border-b border-slate-950 bg-emerald-50/95 backdrop-blur supports-[backdrop-filter]:bg-emerald-50/90">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
+          <a
+            href="/"
+            className="flex items-center gap-4 transition hover:opacity-80"
+          >
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-800 text-xl font-bold text-white shadow-sm">
+              iT
+            </div>
+
+            <div className="text-sm font-medium text-slate-500">
+              <div>
+                <span className="font-semibold text-emerald-700">iTeamProject</span> · Your IT project. No stress, just results.
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="/"
+            className="rounded-2xl border border-emerald-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-600 shadow-sm transition hover:bg-emerald-50 hover:text-emerald-700"
+          >
+            Torna alla Home
+          </a>
+        </div>
+      </header>
+
+      <main className="min-h-screen bg-white text-slate-800">
       <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
         <h1 className="text-4xl font-semibold tracking-tight text-slate-950">
           Privacy Policy
@@ -112,6 +139,7 @@ export default function PrivacyPolicyPage() {
           </section>
         </div>
       </div>
-    </main>
+      </main>
+    </>
   );
 }
