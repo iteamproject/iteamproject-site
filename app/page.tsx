@@ -17,6 +17,7 @@ import {
   Globe,
   ClipboardList,
 } from "lucide-react";
+import CookieBanner from "./components/CookieBanner";
 
 type Lang = "it" | "en";
 
@@ -828,6 +829,8 @@ export default function ITeamProjectWebsiteV2() {
           <div>info@iteamproject.it | iteamproject@pec.it</div>
         </div>
       </footer>
+
+      <CookieBanner />
     </div>
   );
 }
