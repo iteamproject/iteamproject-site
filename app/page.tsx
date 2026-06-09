@@ -537,10 +537,7 @@ export default function ITeamProjectWebsiteV2() {
   }, [lang]);
 
   return (
-    <div
-      className="min-h-screen bg-white pt-20 text-slate-900 scroll-smooth"
-      style={{ fontFamily: 'Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif' }}
-    >
+    <div className="min-h-screen bg-white pt-20 text-slate-900 scroll-smooth">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-950 bg-emerald-50/95 backdrop-blur supports-[backdrop-filter]:bg-emerald-50/90">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
           <div className="flex items-center gap-4">
