@@ -77,6 +77,15 @@ type Copy = {
   problemsBridge: string;
   problemsCta: string;
   problems: ProblemItem[];
+  caseHistoryLabel: string;
+  caseHistoryTitle: string;
+  caseHistoryText: string;
+  caseHistoryCategory: string;
+  caseHistoryHeadline: string;
+  caseHistoryKpiTco: string;
+  caseHistoryKpiAvailability: string;
+  caseHistoryKpiStores: string;
+  caseHistoryCta: string;
 };
 
 const copyByLang: Record<Lang, Copy> = {
@@ -86,6 +95,7 @@ const copyByLang: Record<Lang, Copy> = {
       { label: "Servizi", href: "#servizi" },
       { label: "Cosa risolviamo", href: "#problems" },
       { label: "Risultati", href: "#risultati" },
+      { label: "Case History", href: "/case-history/fashion-retail-sdwan" },
       { label: "Metodo", href: "#metodo" },
       { label: "Ambiti", href: "#settori" },
       { label: "Contatti", href: "#cta" },
@@ -132,6 +142,16 @@ const copyByLang: Record<Lang, Copy> = {
     problemsBridge:
       "Se ti riconosci anche solo in uno di questi punti, significa che manca una governance IT strutturata.",
     problemsCta: "Parliamo del tuo contesto IT",
+    caseHistoryLabel: "Case History",
+    caseHistoryTitle: "Un progetto reale di trasformazione infrastrutturale",
+    caseHistoryText:
+      "Come una primaria azienda italiana del Fashion Retail con oltre 100 punti vendita ha ridotto i costi IT e aumentato la resilienza della propria infrastruttura grazie a una nuova architettura SD-WAN Enterprise.",
+    caseHistoryCategory: "Fashion Retail Multi-Sede",
+    caseHistoryHeadline: "Oltre 100 punti vendita, una sola rete",
+    caseHistoryKpiTco: "Riduzione TCO",
+    caseHistoryKpiAvailability: "Disponibilità",
+    caseHistoryKpiStores: "Punti vendita",
+    caseHistoryCta: "Leggi il caso completo",
 
     methodLabel: "Metodo",
     methodTitle: "Un processo in 4 fasi, semplice da leggere e concreto da applicare.",
@@ -273,6 +293,7 @@ const copyByLang: Record<Lang, Copy> = {
       { label: "Services", href: "#servizi" },
       { label: "What we solve", href: "#problems" },
       { label: "Outcomes", href: "#risultati" },
+      { label: "Case Study", href: "/case-history/fashion-retail-sdwan" },
       { label: "Method", href: "#metodo" },
       { label: "Sectors", href: "#settori" },
       { label: "Contact", href: "#cta" },
@@ -319,6 +340,16 @@ const copyByLang: Record<Lang, Copy> = {
     problemsBridge:
       "If you recognize even one of these issues, it usually means structured IT governance is missing.",
     problemsCta: "Let’s discuss your IT context",
+    caseHistoryLabel: "Case Study",
+    caseHistoryTitle: "A real infrastructure transformation project",
+    caseHistoryText:
+      "How a major Italian Fashion Retail company with over 100 stores reduced IT costs and increased infrastructure resilience through a new Enterprise SD-WAN architecture.",
+    caseHistoryCategory: "Multi-Site Fashion Retail",
+    caseHistoryHeadline: "Over 100 stores, one network",
+    caseHistoryKpiTco: "TCO reduction",
+    caseHistoryKpiAvailability: "Availability",
+    caseHistoryKpiStores: "Stores",
+    caseHistoryCta: "Read the full case study",
 
     methodLabel: "Method",
     methodTitle: "A 4-step process, simple to understand and practical to apply.",
@@ -461,6 +492,28 @@ export default function ITeamProjectWebsiteV2() {
   const [activeSection, setActiveSection] = useState<string>("#chi-siamo");
   const t = useMemo(() => copyByLang[lang], [lang]);
 
+  const changeLanguage = (nextLang: Lang) => {
+    setLang(nextLang);
+
+    try {
+      localStorage.setItem("iteamproject-lang", nextLang);
+    } catch {
+      // localStorage may be unavailable in private/restricted contexts.
+    }
+  };
+
+  useEffect(() => {
+    try {
+      const storedLang = localStorage.getItem("iteamproject-lang") as Lang | null;
+
+      if (storedLang === "it" || storedLang === "en") {
+        setLang(storedLang);
+      }
+    } catch {
+      // localStorage may be unavailable in private/restricted contexts.
+    }
+  }, []);
+
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
 
@@ -505,7 +558,11 @@ export default function ITeamProjectWebsiteV2() {
             {t.navItems.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
+                href={
+                  item.href.startsWith("/case-history")
+                    ? `${item.href}?lang=${lang}`
+                    : item.href
+                }
                 className={`text-sm font-medium transition-colors ${activeSection === item.href ? "text-emerald-700" : "text-slate-600 hover:text-emerald-700"}`}
               >
                 {item.label}
@@ -517,7 +574,7 @@ export default function ITeamProjectWebsiteV2() {
             <div className="inline-flex items-center rounded-xl border border-emerald-200 bg-white/80 p-1 shadow-sm">
               <button
                 type="button"
-                onClick={() => setLang("it")}
+                onClick={() => changeLanguage("it")}
                 className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
                   lang === "it" ? "bg-slate-950 text-white" : "text-slate-600 hover:text-emerald-700"
                 }`}
@@ -526,7 +583,7 @@ export default function ITeamProjectWebsiteV2() {
               </button>
               <button
                 type="button"
-                onClick={() => setLang("en")}
+                onClick={() => changeLanguage("en")}
                 className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
                   lang === "en" ? "bg-slate-950 text-white" : "text-slate-600 hover:text-emerald-700"
                 }`}
@@ -773,8 +830,58 @@ export default function ITeamProjectWebsiteV2() {
           </div>
         </div>
       </section>
+      <section id="case-history" className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+              {t.caseHistoryLabel}
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight leading-tight text-slate-950 sm:text-4xl">
+              {t.caseHistoryTitle}
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              {t.caseHistoryText}
+            </p>
+          </div>
 
-      <section id="cta" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mt-10 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
+              {t.caseHistoryCategory}
+            </div>
+
+            <h3 className="mt-3 text-2xl font-semibold text-slate-950">
+              {t.caseHistoryHeadline}
+            </h3>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl bg-emerald-50 p-4">
+                <div className="text-2xl font-semibold text-emerald-700">40%</div>
+                <div className="text-sm text-slate-600">{t.caseHistoryKpiTco}</div>
+              </div>
+
+              <div className="rounded-2xl bg-emerald-50 p-4">
+                <div className="text-2xl font-semibold text-emerald-700">99,9%</div>
+                <div className="text-sm text-slate-600">{t.caseHistoryKpiAvailability}</div>
+              </div>
+
+              <div className="rounded-2xl bg-emerald-50 p-4">
+                <div className="text-2xl font-semibold text-emerald-700">100+</div>
+                <div className="text-sm text-slate-600">{t.caseHistoryKpiStores}</div>
+              </div>
+            </div>
+
+            <a
+              href={`/case-history/fashion-retail-sdwan?lang=${lang}`}
+              className="mt-8 inline-flex rounded-2xl bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-900"
+            >
+              {t.caseHistoryCta}
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+<section id="cta" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="rounded-[2rem] bg-slate-950 p-8 text-white shadow-2xl lg:p-12">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
