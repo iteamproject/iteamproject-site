@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Static export: all public pages and assets are crawlable.
 Sitemap: https://iteamproject.it/sitemap.xml
