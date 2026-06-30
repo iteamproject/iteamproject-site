@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { Building2, CheckCircle2, FileText, Mail, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  CheckCircle2,
+  FileText,
+  Mail,
+  ShieldCheck,
+} from "lucide-react";
 import { contactByLocale } from "@/data/contact";
 import { site } from "@/data/site";
 import { routes, type Locale } from "@/lib/routes";
@@ -14,11 +21,13 @@ type ContactPageProps = {
 const relatedLinks = {
   it: [
     { label: "Servizi", href: routes.servicesIndex.it },
+    { label: "Case History", href: routes.caseHistoryIndex.it },
     { label: "Settori", href: routes.sectorsIndex.it },
     { label: "Chi siamo", href: routes.about.it },
   ],
   en: [
     { label: "Services", href: routes.servicesIndex.en },
+    { label: "Case Studies", href: routes.caseHistoryIndex.en },
     { label: "Sectors", href: routes.sectorsIndex.en },
     { label: "About", href: routes.about.en },
   ],
@@ -26,6 +35,9 @@ const relatedLinks = {
 
 export default function ContactPage({ locale }: ContactPageProps) {
   const contact = contactByLocale[locale];
+  const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(
+    contact.mailSubject
+  )}&body=${contact.mailBody}`;
 
   return (
     <>
@@ -48,12 +60,21 @@ export default function ContactPage({ locale }: ContactPageProps) {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
               {contact.text}
             </p>
-            <a
-              href={`mailto:${site.email}`}
-              className="mt-8 inline-flex rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
-            >
-              {contact.ctaLabel}
-            </a>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={mailHref}
+                className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+              >
+                <span>{contact.ctaLabel}</span>
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </a>
+              <Link
+                href={routes.servicesIndex[locale]}
+                className="inline-flex rounded-full border border-slate-200 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-800"
+              >
+                {locale === "it" ? "Vedi i servizi" : "View services"}
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -92,7 +113,33 @@ export default function ContactPage({ locale }: ContactPageProps) {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+        <section className="border-y border-slate-200 bg-slate-50 py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+              {contact.nextStepsTitle}
+            </h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {contact.nextSteps.map((step, index) => (
+                <article
+                  key={step.title}
+                  className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-50 text-sm font-semibold text-emerald-700">
+                    {index + 1}
+                  </div>
+                  <h3 className="mt-5 text-xl font-semibold text-slate-950">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    {step.text}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="rounded-[2rem] bg-slate-950 p-8 text-white shadow-2xl lg:p-12">
             <h2 className="text-2xl font-semibold tracking-tight">
               {contact.relatedTitle}
