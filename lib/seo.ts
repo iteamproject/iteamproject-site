@@ -215,6 +215,39 @@ export const sectorIndexMetadata: Record<Locale, Metadata> = {
   }),
 };
 
+export const contactMetadata: Record<Locale, Metadata> = {
+  it: createPageMetadata({
+    title: "Contatti | iTeamProject",
+    description:
+      "Contatta iTeamProject per una prima valutazione su governance IT, service management, audit, compliance e controllo delivery.",
+    path: routes.contact.it,
+    locale: "it",
+    languages: routes.contact,
+    keywords: [
+      "contatti iTeamProject",
+      "consulenza IT Firenze",
+      "governance IT",
+      "service management",
+      "audit compliance IT",
+    ],
+  }),
+  en: createPageMetadata({
+    title: "Contact | iTeamProject",
+    description:
+      "Contact iTeamProject for an initial assessment on IT governance, service management, audit, compliance and delivery control.",
+    path: routes.contact.en,
+    locale: "en",
+    languages: routes.contact,
+    keywords: [
+      "iTeamProject contact",
+      "IT consulting",
+      "IT governance",
+      "service management",
+      "IT audit compliance",
+    ],
+  }),
+};
+
 export function serviceMetadata(slug: ServiceSlug, locale: Locale): Metadata {
   const service = serviceDetails[slug][locale];
 

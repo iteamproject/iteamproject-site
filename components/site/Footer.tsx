@@ -26,6 +26,9 @@ export default function Footer({ locale }: FooterProps) {
           <Link href={routes.sectorsIndex[locale]} className="transition hover:text-emerald-600">
             {locale === "it" ? "Settori" : "Sectors"}
           </Link>
+          <Link href={routes.contact[locale]} className="transition hover:text-emerald-600">
+            {locale === "it" ? "Contatti" : "Contact"}
+          </Link>
           <Link href={routes.privacy[locale]} className="transition hover:text-emerald-600">
             Privacy Policy
           </Link>

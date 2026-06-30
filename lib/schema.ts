@@ -200,6 +200,23 @@ export function sectorIndexStructuredData(locale: Locale): JsonLd[] {
   ];
 }
 
+export function contactStructuredData(locale: Locale): JsonLd[] {
+  return [
+    organizationSchema(),
+    professionalServiceSchema(locale),
+    breadcrumbSchema([
+      {
+        name: locale === "it" ? "Home" : "Home",
+        path: routes.home[locale],
+      },
+      {
+        name: locale === "it" ? "Contatti" : "Contact",
+        path: routes.contact[locale],
+      },
+    ]),
+  ];
+}
+
 export function serviceStructuredData(slug: ServiceSlug, locale: Locale): JsonLd[] {
   const service = serviceDetails[slug][locale];
 

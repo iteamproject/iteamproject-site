@@ -32,6 +32,10 @@ export const routes = {
     it: "/it/settori",
     en: "/en/sectors",
   },
+  contact: {
+    it: "/it/contatti",
+    en: "/en/contact",
+  },
   services: {
     itGovernance: {
       it: "/it/servizi/it-governance",
