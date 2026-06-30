@@ -11,6 +11,7 @@ export type CaseHistoryContent = {
     category: string;
     title: string;
     excerpt: string;
+    tags: string[];
     kpis: {
       value: string;
       label: string;
@@ -53,6 +54,7 @@ export const caseHistories: Record<
         title: "Oltre 100 punti vendita, una sola rete",
         excerpt:
           "Come una primaria azienda italiana del Fashion Retail ha ridotto i costi IT e aumentato la resilienza con una nuova architettura SD-WAN Enterprise.",
+        tags: ["SD-WAN", "Retail multi-sede", "Networking", "Business continuity"],
         kpis: [
           { value: "40%", label: "Riduzione TCO" },
           { value: "99,9%", label: "Disponibilità" },
@@ -163,6 +165,7 @@ export const caseHistories: Record<
         title: "Over 100 stores, one network",
         excerpt:
           "How a major Italian Fashion Retail company reduced IT costs and increased infrastructure resilience through a new Enterprise SD-WAN architecture.",
+        tags: ["SD-WAN", "Multi-site retail", "Networking", "Business continuity"],
         kpis: [
           { value: "40%", label: "TCO reduction" },
           { value: "99.9%", label: "Availability" },
@@ -274,6 +277,7 @@ export const caseHistories: Record<
         title: "Governance e service management per un IT più controllabile",
         excerpt:
           "Come un'azienda con più fornitori IT ha introdotto ruoli, SLA, KPI, escalation e reporting per ridurre attriti operativi e migliorare il controllo dei servizi.",
+        tags: ["IT Governance", "Service Management", "SLA/KPI", "Vendor control"],
         kpis: [
           { value: "4", label: "Aree di controllo" },
           { value: "SLA/KPI", label: "Reporting servizi" },
@@ -374,6 +378,7 @@ export const caseHistories: Record<
         title: "Governance and service management for a more controllable IT model",
         excerpt:
           "How a multi-vendor organization introduced roles, SLAs, KPIs, escalation paths and reporting to reduce operational friction and improve IT service control.",
+        tags: ["IT Governance", "Service Management", "SLA/KPI", "Vendor control"],
         kpis: [
           { value: "4", label: "Control areas" },
           { value: "SLA/KPI", label: "Service reporting" },
