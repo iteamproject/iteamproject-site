@@ -1,11 +1,12 @@
 type ContentBlockProps = {
+  id: string;
   title: string;
   paragraphs: string[];
 };
 
-export default function ContentBlock({ title, paragraphs }: ContentBlockProps) {
+export default function ContentBlock({ id, title, paragraphs }: ContentBlockProps) {
   return (
-    <article>
+    <article id={id} className="scroll-mt-28">
       <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
         {title}
       </h2>
