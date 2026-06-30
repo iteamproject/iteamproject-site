@@ -15,6 +15,20 @@ const absoluteUrl = (path: string) => new URL(path, site.url).toString();
 const organizationId = `${site.url}/#organization`;
 const professionalServiceId = `${site.url}/#professionalservice`;
 
+const caseHistoryDates: Record<
+  CaseHistorySlug,
+  { datePublished: string; dateModified: string }
+> = {
+  "fashion-retail-sdwan": {
+    datePublished: "2026-06-29",
+    dateModified: "2026-06-30",
+  },
+  "it-governance-service-management": {
+    datePublished: "2026-06-30",
+    dateModified: "2026-06-30",
+  },
+};
+
 export function organizationSchema(): JsonLd {
   return {
     "@type": "Organization",
@@ -100,6 +114,7 @@ export function breadcrumbSchema(items: BreadcrumbItem[]): JsonLd {
 export function articleSchema(slug: CaseHistorySlug, locale: Locale): JsonLd {
   const caseHistory = caseHistories[slug][locale];
   const path = caseHistory.path[locale];
+  const dates = caseHistoryDates[slug];
 
   return {
     "@type": "Article",
@@ -108,8 +123,8 @@ export function articleSchema(slug: CaseHistorySlug, locale: Locale): JsonLd {
     image: absoluteUrl("/og-image.jpg"),
     url: absoluteUrl(path),
     mainEntityOfPage: absoluteUrl(path),
-    datePublished: "2026-06-29",
-    dateModified: "2026-06-29",
+    datePublished: dates.datePublished,
+    dateModified: dates.dateModified,
     inLanguage: locale,
     author: {
       "@id": organizationId,
