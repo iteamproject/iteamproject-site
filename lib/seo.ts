@@ -182,6 +182,39 @@ export const serviceIndexMetadata: Record<Locale, Metadata> = {
   }),
 };
 
+export const sectorIndexMetadata: Record<Locale, Metadata> = {
+  it: createPageMetadata({
+    title: "Settori e contesti IT | iTeamProject",
+    description:
+      "Contesti in cui iTeamProject porta valore: retail multi-sede, PMI strutturate, fornitori IT multipli, audit, compliance e trasformazioni IT.",
+    path: routes.sectorsIndex.it,
+    locale: "it",
+    languages: routes.sectorsIndex,
+    keywords: [
+      "settori IT",
+      "retail multi-sede",
+      "PMI strutturate",
+      "governance fornitori IT",
+      "audit compliance logging",
+    ],
+  }),
+  en: createPageMetadata({
+    title: "Sectors and IT contexts | iTeamProject",
+    description:
+      "Contexts where iTeamProject delivers value: multi-site retail, structured SMEs, multiple IT vendors, audit, compliance and IT transformations.",
+    path: routes.sectorsIndex.en,
+    locale: "en",
+    languages: routes.sectorsIndex,
+    keywords: [
+      "IT sectors",
+      "multi-site retail",
+      "structured SMEs",
+      "IT vendor governance",
+      "audit compliance logging",
+    ],
+  }),
+};
+
 export function serviceMetadata(slug: ServiceSlug, locale: Locale): Metadata {
   const service = serviceDetails[slug][locale];
 

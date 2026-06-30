@@ -28,6 +28,10 @@ export const routes = {
     it: "/it/servizi",
     en: "/en/services",
   },
+  sectorsIndex: {
+    it: "/it/settori",
+    en: "/en/sectors",
+  },
   services: {
     itGovernance: {
       it: "/it/servizi/it-governance",

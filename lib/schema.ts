@@ -183,6 +183,23 @@ export function serviceIndexStructuredData(locale: Locale): JsonLd[] {
   ];
 }
 
+export function sectorIndexStructuredData(locale: Locale): JsonLd[] {
+  return [
+    organizationSchema(),
+    professionalServiceSchema(locale),
+    breadcrumbSchema([
+      {
+        name: locale === "it" ? "Home" : "Home",
+        path: routes.home[locale],
+      },
+      {
+        name: locale === "it" ? "Settori" : "Sectors",
+        path: routes.sectorsIndex[locale],
+      },
+    ]),
+  ];
+}
+
 export function serviceStructuredData(slug: ServiceSlug, locale: Locale): JsonLd[] {
   const service = serviceDetails[slug][locale];
 

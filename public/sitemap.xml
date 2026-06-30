@@ -43,6 +43,26 @@
   </url>
 
   <url>
+    <loc>https://iteamproject.it/it/settori</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iteamproject.it/it/settori" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://iteamproject.it/en/sectors" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iteamproject.it/it/settori" />
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://iteamproject.it/en/sectors</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iteamproject.it/it/settori" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://iteamproject.it/en/sectors" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iteamproject.it/it/settori" />
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://iteamproject.it/it/servizi</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://iteamproject.it/it/servizi" />
     <xhtml:link rel="alternate" hreflang="en" href="https://iteamproject.it/en/services" />
