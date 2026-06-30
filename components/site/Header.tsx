@@ -55,7 +55,7 @@ export default function Header({
         </Link>
 
         {items.length > 0 ? (
-          <nav className="hidden items-center gap-6 lg:flex">
+          <nav className="hidden items-center gap-6 xl:flex">
             {items.map((item) => (
               <Link
                 key={item.href}
@@ -81,7 +81,7 @@ export default function Header({
               aria-expanded={isMenuOpen}
               aria-label={isMenuOpen ? closeMenuLabel : menuLabel}
               onClick={() => setIsMenuOpen((current) => !current)}
-              className="inline-flex items-center justify-center rounded-xl border border-emerald-200 bg-white/70 p-2 text-slate-600 shadow-sm lg:hidden"
+              className="inline-flex items-center justify-center rounded-xl border border-emerald-200 bg-white/70 p-2 text-slate-600 shadow-sm xl:hidden"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -90,7 +90,7 @@ export default function Header({
       </div>
 
       {items.length > 0 && isMenuOpen ? (
-        <nav className="border-t border-emerald-200 bg-emerald-50 px-6 py-4 shadow-sm lg:hidden">
+        <nav className="border-t border-emerald-200 bg-emerald-50 px-6 py-4 shadow-sm xl:hidden">
           <div className="mx-auto grid max-w-7xl gap-2">
             {items.map((item) => (
               <Link
