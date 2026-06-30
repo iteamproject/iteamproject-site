@@ -8,6 +8,10 @@ export const routes = {
     it: "/it",
     en: "/en",
   },
+  about: {
+    it: "/it/chi-siamo",
+    en: "/en/about",
+  },
   privacy: {
     it: "/it/privacy-policy",
     en: "/en/privacy-policy",

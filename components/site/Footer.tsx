@@ -20,6 +20,9 @@ export default function Footer({ locale }: FooterProps) {
           {site.email} | {site.pec}
         </div>
         <div className="flex flex-wrap gap-4 text-sm">
+          <Link href={routes.about[locale]} className="transition hover:text-emerald-600">
+            {locale === "it" ? "Chi siamo" : "About"}
+          </Link>
           <Link href={routes.privacy[locale]} className="transition hover:text-emerald-600">
             Privacy Policy
           </Link>

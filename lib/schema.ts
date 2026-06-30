@@ -133,6 +133,23 @@ export function homeStructuredData(locale: Locale): JsonLd[] {
   ];
 }
 
+export function aboutStructuredData(locale: Locale): JsonLd[] {
+  return [
+    organizationSchema(),
+    professionalServiceSchema(locale),
+    breadcrumbSchema([
+      {
+        name: locale === "it" ? "Home" : "Home",
+        path: routes.home[locale],
+      },
+      {
+        name: locale === "it" ? "Chi siamo" : "About",
+        path: routes.about[locale],
+      },
+    ]),
+  ];
+}
+
 export function caseHistoryIndexStructuredData(locale: Locale): JsonLd[] {
   return [
     organizationSchema(),

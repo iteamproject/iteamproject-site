@@ -111,6 +111,39 @@ export const homeMetadata: Record<Locale, Metadata> = {
   }),
 };
 
+export const aboutMetadata: Record<Locale, Metadata> = {
+  it: createPageMetadata({
+    title: "Chi siamo | iTeamProject",
+    description:
+      "iTeamProject affianca aziende e management nella governance IT, nel service management e nel controllo operativo dei servizi IT.",
+    path: routes.about.it,
+    locale: "it",
+    languages: routes.about,
+    keywords: [
+      "iTeamProject",
+      "chi siamo",
+      "consulenza IT Firenze",
+      "governance IT",
+      "service management",
+    ],
+  }),
+  en: createPageMetadata({
+    title: "About | iTeamProject",
+    description:
+      "iTeamProject supports companies and leadership with IT governance, service management and operational control of IT services.",
+    path: routes.about.en,
+    locale: "en",
+    languages: routes.about,
+    keywords: [
+      "iTeamProject",
+      "about",
+      "IT consulting",
+      "IT governance",
+      "service management",
+    ],
+  }),
+};
+
 export const caseHistoryIndexMetadata: Record<Locale, Metadata> = {
   it: createPageMetadata({
     title: "Case History | iTeamProject",

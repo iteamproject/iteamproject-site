@@ -23,6 +23,26 @@
   </url>
 
   <url>
+    <loc>https://iteamproject.it/it/chi-siamo</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iteamproject.it/it/chi-siamo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://iteamproject.it/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iteamproject.it/it/chi-siamo" />
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://iteamproject.it/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iteamproject.it/it/chi-siamo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://iteamproject.it/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iteamproject.it/it/chi-siamo" />
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://iteamproject.it/it/servizi</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://iteamproject.it/it/servizi" />
     <xhtml:link rel="alternate" hreflang="en" href="https://iteamproject.it/en/services" />
