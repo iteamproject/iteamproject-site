@@ -54,7 +54,7 @@ export const homeCopyByLocale: Record<Locale, HomeCopy> = {
       { label: "Servizi", href: "#servizi" },
       { label: "Cosa risolviamo", href: "#problems" },
       { label: "Risultati", href: "#risultati" },
-      { label: "Case History", href: "/case-history/fashion-retail-sdwan" },
+      { label: "Case History", href: "/case-history" },
       { label: "Metodo", href: "#metodo" },
       { label: "Ambiti", href: "#settori" },
       { label: "Contatti", href: "#cta" },
@@ -63,7 +63,7 @@ export const homeCopyByLocale: Record<Locale, HomeCopy> = {
     heroTitle: "Creiamo metodo, controllo e continuità nei servizi IT.",
     heroText:
       "iTeamProject affianca aziende e organizzazioni nella strutturazione della governance IT, nel coordinamento tecnico-operativo e nella misurazione delle performance di servizio. L'obiettivo è semplice: trasformare un IT reattivo in un IT governato, leggibile e affidabile.",
-    ctaPrimary: "Richiedi una consulenza",
+    ctaPrimary: "Parliamo del tuo contesto",
     ctaSecondary: "Scopri i servizi",
     servicesLabel: "Servizi",
     servicesTitle: "Servizi pensati per dare struttura e controllo all'IT.",
@@ -78,13 +78,13 @@ export const homeCopyByLocale: Record<Locale, HomeCopy> = {
     problemsText:
       "Interveniamo dove l'IT genera attriti operativi, poca visibilità o dipendenze difficili da governare. L'obiettivo è trasformare criticità ricorrenti in un modello più chiaro, misurabile e sostenibile.",
     problemsBridge:
-      "Se ti riconosci anche solo in uno di questi punti, significa che manca una governance IT strutturata.",
+      "Se ti riconosci in uno di questi punti, conviene partire da una lettura operativa del contesto: responsabilità, fornitori, rischi, priorità e metriche.",
     problemsCta: "Parliamo del tuo contesto IT",
     caseHistoryLabel: "Case History",
-    caseHistoryTitle: "Un progetto reale di trasformazione infrastrutturale",
+    caseHistoryTitle: "Progetti reali, problemi concreti, risultati misurabili",
     caseHistoryText:
-      "Come una primaria azienda italiana del Fashion Retail con oltre 100 punti vendita ha ridotto i costi IT e aumentato la resilienza della propria infrastruttura grazie a una nuova architettura SD-WAN Enterprise.",
-    caseHistoryCta: "Leggi il caso completo",
+      "Dalla trasformazione infrastrutturale multi-sede alla governance IT multi-fornitore: casi concreti in cui metodo, coordinamento e controllo hanno prodotto risultati leggibili.",
+    caseHistoryCta: "Leggi il caso",
     methodLabel: "Metodo",
     methodTitle: "Un processo in 4 fasi, semplice da leggere e concreto da applicare.",
     methodText:
@@ -108,7 +108,7 @@ export const homeCopyByLocale: Record<Locale, HomeCopy> = {
       { label: "Services", href: "#servizi" },
       { label: "What we solve", href: "#problems" },
       { label: "Outcomes", href: "#risultati" },
-      { label: "Case Study", href: "/case-history/fashion-retail-sdwan" },
+      { label: "Case Studies", href: "/case-history" },
       { label: "Method", href: "#metodo" },
       { label: "Sectors", href: "#settori" },
       { label: "Contact", href: "#cta" },
@@ -117,7 +117,7 @@ export const homeCopyByLocale: Record<Locale, HomeCopy> = {
     heroTitle: "We bring structure, control and continuity to IT services.",
     heroText:
       "iTeamProject supports companies and organizations in structuring IT governance, coordinating technical operations and measuring service performance. The goal is simple: turning reactive IT into governed, readable and reliable IT.",
-    ctaPrimary: "Request a consultation",
+    ctaPrimary: "Discuss your context",
     ctaSecondary: "Explore services",
     servicesLabel: "Services",
     servicesTitle: "Services designed to bring structure and control to IT.",
@@ -132,13 +132,13 @@ export const homeCopyByLocale: Record<Locale, HomeCopy> = {
     problemsText:
       "We intervene where IT creates friction, poor visibility or difficult-to-manage dependencies. The goal is to turn recurring issues into a clearer, measurable and sustainable operating model.",
     problemsBridge:
-      "If you recognize even one of these issues, it usually means structured IT governance is missing.",
+      "If you recognize one of these issues, it is worth starting from an operational reading of the context: responsibilities, vendors, risks, priorities and metrics.",
     problemsCta: "Let's discuss your IT context",
     caseHistoryLabel: "Case Study",
-    caseHistoryTitle: "A real infrastructure transformation project",
+    caseHistoryTitle: "Real projects, concrete issues, measurable outcomes",
     caseHistoryText:
-      "How a major Italian Fashion Retail company with over 100 stores reduced IT costs and increased infrastructure resilience through a new Enterprise SD-WAN architecture.",
-    caseHistoryCta: "Read the full case study",
+      "From multi-site infrastructure transformation to multi-vendor IT governance: concrete cases where method, coordination and control delivered readable outcomes.",
+    caseHistoryCta: "Read the case",
     methodLabel: "Method",
     methodTitle: "A 4-step process, simple to understand and practical to apply.",
     methodText:

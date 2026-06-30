@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { problemsByLocale } from "@/data/problems";
+import { routes } from "@/lib/routes";
 import type { Locale } from "@/lib/routes";
 
 type ProblemsProps = {
@@ -68,7 +70,7 @@ export default function Problems({
               asChild
               className="rounded-2xl bg-slate-950 px-6 py-6 text-sm text-white transition-all duration-200 hover:scale-[1.03] hover:bg-slate-900 hover:shadow-lg active:scale-[0.98]"
             >
-              <a href="#cta">{ctaLabel}</a>
+              <Link href={routes.contact[locale]}>{ctaLabel}</Link>
             </Button>
           </div>
         </div>

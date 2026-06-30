@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { heroHighlightsByLocale, heroMetricsByLocale } from "@/data/home";
+import { routes } from "@/lib/routes";
 import type { Locale } from "@/lib/routes";
 
 type HeroProps = {
@@ -48,16 +50,16 @@ export default function Hero({
                 asChild
                 className="rounded-2xl bg-slate-950 px-6 py-6 text-sm text-white transition-all duration-200 hover:scale-[1.03] hover:bg-slate-900 hover:shadow-lg active:scale-[0.98]"
               >
-                <a href="#cta">
+                <Link href={routes.contact[locale]}>
                   {ctaPrimary} <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                </Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 className="rounded-2xl border-emerald-200 px-6 py-6 text-sm text-slate-700 transition-all duration-200 hover:scale-[1.03] hover:bg-emerald-50 hover:text-emerald-700 hover:shadow-md active:scale-[0.98]"
               >
-                <a href="#servizi">{ctaSecondary}</a>
+                <Link href={routes.servicesIndex[locale]}>{ctaSecondary}</Link>
               </Button>
             </div>
 
