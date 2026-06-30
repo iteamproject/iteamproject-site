@@ -59,5 +59,9 @@ export const routes = {
       it: "/it/case-history/fashion-retail-sdwan",
       en: "/en/case-history/fashion-retail-sdwan",
     },
+    itGovernanceServiceManagement: {
+      it: "/it/case-history/it-governance-service-management",
+      en: "/en/case-history/it-governance-service-management",
+    },
   },
 } as const;

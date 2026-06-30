@@ -1,6 +1,8 @@
 import { routes, type Locale } from "@/lib/routes";
 
-export type CaseHistorySlug = "fashion-retail-sdwan";
+export type CaseHistorySlug =
+  | "fashion-retail-sdwan"
+  | "it-governance-service-management";
 
 export type CaseHistoryContent = {
   slug: CaseHistorySlug;
@@ -260,6 +262,208 @@ export const caseHistories: Record<
         ctaText:
           "We can set up an initial operational assessment with no obligation to analyze costs, resilience, governance and scalability of your architecture.",
         ctaButton: "Contact iTeamProject",
+      },
+    },
+  },
+  "it-governance-service-management": {
+    it: {
+      slug: "it-governance-service-management",
+      path: routes.caseHistories.itGovernanceServiceManagement,
+      listing: {
+        category: "IT Governance Multi-Fornitore",
+        title: "Governance e service management per un IT più controllabile",
+        excerpt:
+          "Come un'azienda con più fornitori IT ha introdotto ruoli, SLA, KPI, escalation e reporting per ridurre attriti operativi e migliorare il controllo dei servizi.",
+        kpis: [
+          { value: "4", label: "Aree di controllo" },
+          { value: "SLA/KPI", label: "Reporting servizi" },
+          { value: "1", label: "Modello operativo" },
+        ],
+      },
+      detail: {
+        label: "Case History",
+        title: "Governance IT e Service Management per un contesto multi-fornitore",
+        intro:
+          "Un percorso di assessment e riorganizzazione operativa per rendere più chiari responsabilità, livelli di servizio, escalation e controllo dei fornitori IT.",
+        facts: [
+          { label: "Settore", value: "Servizi / Organizzazione multi-fornitore" },
+          { label: "Dimensione", value: "Azienda strutturata con sedi e fornitori esterni" },
+          { label: "Ambiti", value: "Governance IT, SLA, KPI, escalation, reporting" },
+          { label: "Ruolo", value: "Assessment, modello operativo e coordinamento" },
+        ],
+        resultsTitle: "Risultati in sintesi",
+        resultsText:
+          "Il progetto ha trasformato un modello operativo poco formalizzato in un sistema di governance più leggibile, misurabile e coordinato.",
+        kpis: [
+          { label: "Responsabilità operative", value: "più chiare" },
+          { label: "SLA e KPI", value: "definiti" },
+          { label: "Escalation", value: "standardizzate" },
+          { label: "Reporting", value: "mensile" },
+          { label: "Fornitori", value: "coordinati" },
+          { label: "Rischi operativi", value: "tracciati" },
+        ],
+        blocks: [
+          {
+            title: "Il contesto",
+            text: [
+              "L'azienda gestiva servizi IT critici attraverso un ecosistema composto da team interni, fornitori infrastrutturali, partner applicativi e servizi gestiti esterni.",
+              "La crescita progressiva del perimetro aveva reso più complesso capire chi fosse responsabile di ogni attività, quali tempi di risposta fossero attesi e come misurare in modo coerente la qualità del servizio.",
+            ],
+          },
+          {
+            title: "Le principali criticità",
+            text: [
+              "Le attività operative erano spesso gestite con logiche diverse tra fornitori, senza un modello condiviso per priorità, presa in carico, escalation e chiusura delle richieste.",
+              "Il management disponeva di informazioni frammentate: dati tecnici, ticket e aggiornamenti periodici non erano sempre collegati a indicatori utili per governare costi, rischi e qualità del servizio.",
+            ],
+          },
+          {
+            title: "La sfida",
+            text: [
+              "L'obiettivo era costruire un modello di governance pratico, sostenibile e non burocratico, capace di aumentare il controllo senza rallentare l'operatività quotidiana.",
+              "Il lavoro doveva armonizzare fornitori già attivi, processi esistenti e responsabilità interne, evitando una riscrittura completa dell'organizzazione IT.",
+            ],
+          },
+          {
+            title: "La soluzione implementata",
+            text: [
+              "iTeamProject ha condotto un assessment operativo sui principali flussi di lavoro, mappando servizi, fornitori, responsabilità, livelli di criticità, strumenti utilizzati e punti di escalation.",
+              "Su questa base è stato definito un modello di governance con ruoli chiari, matrice delle responsabilità, criteri di priorità, SLA/KPI essenziali, calendario di reporting e momenti ricorrenti di controllo.",
+            ],
+          },
+          {
+            title: "Il modello operativo",
+            text: [
+              "Il nuovo modello ha introdotto una distinzione più netta tra gestione operativa, controllo del servizio, decisioni di governance e coordinamento dei fornitori.",
+              "Le attività ricorrenti sono state ricondotte a un ciclo semplice: richiesta, presa in carico, gestione, escalation quando necessaria, chiusura, misurazione e revisione periodica.",
+            ],
+          },
+          {
+            title: "Reporting e controllo",
+            text: [
+              "Il reporting è stato semplificato in un set di indicatori leggibili dal management: volumi, priorità, tempi di risposta, backlog, incidenti ricorrenti, azioni correttive e rischi aperti.",
+              "Questo ha permesso di spostare la discussione da singoli problemi operativi a una vista più strutturata su qualità del servizio, responsabilità e decisioni da prendere.",
+            ],
+          },
+          {
+            title: "Il ruolo di iTeamProject",
+            text: [
+              "iTeamProject ha supportato assessment, disegno del modello, facilitazione dei tavoli con i fornitori, impostazione dei KPI e definizione delle routine di controllo.",
+              "L'approccio è stato volutamente pragmatico: poche regole chiare, responsabilità esplicite e strumenti già compatibili con l'operatività del cliente.",
+            ],
+          },
+          {
+            title: "I risultati",
+            text: [
+              "Il cliente ha ottenuto maggiore visibilità sui servizi IT, una gestione più ordinata dei fornitori e un linguaggio comune per discutere priorità, livelli di servizio e rischi.",
+              "Il modello ha ridotto ambiguità operative e attriti decisionali, creando una base più solida per evoluzioni future su IT Service Management, audit e controllo della delivery.",
+            ],
+          },
+        ],
+        ctaTitle: "Vuoi rendere più governabile il tuo ecosistema IT?",
+        ctaText:
+          "Possiamo analizzare servizi, fornitori, responsabilità e flussi operativi per costruire un modello di governance semplice, misurabile e sostenibile.",
+        ctaButton: "Parla con iTeamProject",
+      },
+    },
+    en: {
+      slug: "it-governance-service-management",
+      path: routes.caseHistories.itGovernanceServiceManagement,
+      listing: {
+        category: "Multi-Vendor IT Governance",
+        title: "Governance and service management for a more controllable IT model",
+        excerpt:
+          "How a multi-vendor organization introduced roles, SLAs, KPIs, escalation paths and reporting to reduce operational friction and improve IT service control.",
+        kpis: [
+          { value: "4", label: "Control areas" },
+          { value: "SLA/KPI", label: "Service reporting" },
+          { value: "1", label: "Operating model" },
+        ],
+      },
+      detail: {
+        label: "Case Study",
+        title: "IT Governance and Service Management for a multi-vendor environment",
+        intro:
+          "An assessment and operating model redesign to clarify responsibilities, service levels, escalation paths and vendor control.",
+        facts: [
+          { label: "Industry", value: "Services / Multi-vendor organization" },
+          { label: "Scale", value: "Structured company with sites and external providers" },
+          { label: "Scope", value: "IT Governance, SLAs, KPIs, escalation, reporting" },
+          { label: "Role", value: "Assessment, operating model and coordination" },
+        ],
+        resultsTitle: "Results at a glance",
+        resultsText:
+          "The project turned a loosely formalized operating model into a clearer, measurable and better coordinated governance system.",
+        kpis: [
+          { label: "Operational responsibilities", value: "clearer" },
+          { label: "SLAs and KPIs", value: "defined" },
+          { label: "Escalation paths", value: "standardized" },
+          { label: "Reporting", value: "monthly" },
+          { label: "Vendors", value: "coordinated" },
+          { label: "Operational risks", value: "tracked" },
+        ],
+        blocks: [
+          {
+            title: "Context",
+            text: [
+              "The company managed critical IT services through an ecosystem of internal teams, infrastructure providers, application partners and external managed services.",
+              "As the IT perimeter expanded, it became harder to understand who was responsible for each activity, which response times were expected and how service quality should be measured consistently.",
+            ],
+          },
+          {
+            title: "Key issues",
+            text: [
+              "Operational work was often managed differently across providers, without a shared model for priorities, ownership, escalation and request closure.",
+              "Management had fragmented information: technical data, tickets and periodic updates were not always connected to indicators useful for governing cost, risk and service quality.",
+            ],
+          },
+          {
+            title: "The challenge",
+            text: [
+              "The goal was to build a practical, sustainable and non-bureaucratic governance model that improved control without slowing down day-to-day operations.",
+              "The work had to align existing vendors, processes and internal responsibilities without forcing a full redesign of the IT organization.",
+            ],
+          },
+          {
+            title: "The implemented solution",
+            text: [
+              "iTeamProject carried out an operational assessment of the main workstreams, mapping services, vendors, responsibilities, criticality levels, tools and escalation points.",
+              "Based on this assessment, a governance model was defined with clear roles, a responsibility matrix, priority criteria, essential SLAs/KPIs, a reporting calendar and recurring control routines.",
+            ],
+          },
+          {
+            title: "The operating model",
+            text: [
+              "The new model introduced a clearer distinction between operations, service control, governance decisions and vendor coordination.",
+              "Recurring activities were structured into a simple cycle: request, ownership, execution, escalation when needed, closure, measurement and periodic review.",
+            ],
+          },
+          {
+            title: "Reporting and control",
+            text: [
+              "Reporting was simplified into a set of indicators readable by management: volumes, priorities, response times, backlog, recurring incidents, corrective actions and open risks.",
+              "This shifted discussions from isolated operational issues to a more structured view of service quality, responsibilities and decisions to be made.",
+            ],
+          },
+          {
+            title: "The role of iTeamProject",
+            text: [
+              "iTeamProject supported the assessment, model design, vendor workshops, KPI setup and definition of control routines.",
+              "The approach was intentionally pragmatic: a limited set of clear rules, explicit responsibilities and tools already compatible with the customer's operations.",
+            ],
+          },
+          {
+            title: "Results",
+            text: [
+              "The customer gained better visibility over IT services, more orderly vendor management and a shared language for discussing priorities, service levels and risks.",
+              "The model reduced operational ambiguity and decision friction, creating a stronger foundation for future evolution in IT Service Management, audit and delivery control.",
+            ],
+          },
+        ],
+        ctaTitle: "Do you want to make your IT ecosystem easier to govern?",
+        ctaText:
+          "We can analyze services, vendors, responsibilities and operating flows to build a governance model that is simple, measurable and sustainable.",
+        ctaButton: "Talk to iTeamProject",
       },
     },
   },

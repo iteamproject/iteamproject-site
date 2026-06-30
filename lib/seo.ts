@@ -295,6 +295,43 @@ export const fashionRetailSdwanMetadata: Record<Locale, Metadata> = {
   }),
 };
 
+export const itGovernanceServiceManagementMetadata: Record<Locale, Metadata> = {
+  it: createPageMetadata({
+    title: "Case History IT Governance | Service Management multi-fornitore",
+    description:
+      "Come un'azienda multi-fornitore ha introdotto governance IT, SLA, KPI, escalation e reporting per rendere i servizi più controllabili.",
+    path: routes.caseHistories.itGovernanceServiceManagement.it,
+    locale: "it",
+    languages: routes.caseHistories.itGovernanceServiceManagement,
+    type: "article",
+    keywords: [
+      "case history IT governance",
+      "service management multi-fornitore",
+      "SLA KPI IT",
+      "governance fornitori IT",
+      "IT service management",
+      "reporting servizi IT",
+    ],
+  }),
+  en: createPageMetadata({
+    title: "IT Governance Case Study | Multi-Vendor Service Management",
+    description:
+      "How a multi-vendor organization introduced IT governance, SLAs, KPIs, escalation paths and reporting to improve service control.",
+    path: routes.caseHistories.itGovernanceServiceManagement.en,
+    locale: "en",
+    languages: routes.caseHistories.itGovernanceServiceManagement,
+    type: "article",
+    keywords: [
+      "IT governance case study",
+      "multi-vendor service management",
+      "IT SLA KPI",
+      "IT vendor governance",
+      "IT service management",
+      "IT service reporting",
+    ],
+  }),
+};
+
 export const policyMetadata = {
   privacy: {
     it: createPageMetadata({
