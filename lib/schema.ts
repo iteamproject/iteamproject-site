@@ -1,4 +1,5 @@
 import { caseHistories, type CaseHistorySlug } from "@/data/caseHistories";
+import { serviceDetails, type ServiceSlug } from "@/data/services";
 import { site } from "@/data/site";
 import { routes, type Locale } from "./routes";
 
@@ -143,6 +144,46 @@ export function caseHistoryIndexStructuredData(locale: Locale): JsonLd[] {
       {
         name: locale === "it" ? "Case History" : "Case Studies",
         path: routes.caseHistoryIndex[locale],
+      },
+    ]),
+  ];
+}
+
+export function serviceIndexStructuredData(locale: Locale): JsonLd[] {
+  return [
+    organizationSchema(),
+    professionalServiceSchema(locale),
+    breadcrumbSchema([
+      {
+        name: locale === "it" ? "Home" : "Home",
+        path: routes.home[locale],
+      },
+      {
+        name: locale === "it" ? "Servizi" : "Services",
+        path: routes.servicesIndex[locale],
+      },
+    ]),
+  ];
+}
+
+export function serviceStructuredData(slug: ServiceSlug, locale: Locale): JsonLd[] {
+  const service = serviceDetails[slug][locale];
+
+  return [
+    organizationSchema(),
+    professionalServiceSchema(locale),
+    breadcrumbSchema([
+      {
+        name: locale === "it" ? "Home" : "Home",
+        path: routes.home[locale],
+      },
+      {
+        name: locale === "it" ? "Servizi" : "Services",
+        path: routes.servicesIndex[locale],
+      },
+      {
+        name: service.title,
+        path: service.path[locale],
       },
     ]),
   ];

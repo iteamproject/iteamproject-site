@@ -20,6 +20,28 @@ export const routes = {
     it: "/it/case-history",
     en: "/en/case-history",
   },
+  servicesIndex: {
+    it: "/it/servizi",
+    en: "/en/services",
+  },
+  services: {
+    itGovernance: {
+      it: "/it/servizi/it-governance",
+      en: "/en/services/it-governance",
+    },
+    itServiceManagement: {
+      it: "/it/servizi/it-service-management",
+      en: "/en/services/it-service-management",
+    },
+    projectDeliveryControl: {
+      it: "/it/servizi/project-delivery-control",
+      en: "/en/services/project-delivery-control",
+    },
+    auditComplianceLogging: {
+      it: "/it/servizi/audit-compliance-logging",
+      en: "/en/services/audit-compliance-logging",
+    },
+  },
   caseHistories: {
     fashionRetailSdwan: {
       it: "/it/case-history/fashion-retail-sdwan",

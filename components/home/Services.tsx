@@ -1,30 +1,14 @@
-import {
-  BarChart3,
-  Briefcase,
-  ClipboardList,
-  Network,
-  Settings2,
-  ShieldCheck,
-  type LucideIcon,
-} from "lucide-react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
-import { servicesByLocale, type ServiceIcon } from "@/data/services";
+import { servicesByLocale } from "@/data/services";
 import type { Locale } from "@/lib/routes";
+import ServiceIcon from "@/components/services/ServiceIcon";
 
 type ServicesProps = {
   locale: Locale;
   label: string;
   title: string;
   text: string;
-};
-
-const icons: Record<ServiceIcon, LucideIcon> = {
-  "shield-check": ShieldCheck,
-  settings: Settings2,
-  network: Network,
-  briefcase: Briefcase,
-  "clipboard-list": ClipboardList,
-  "bar-chart": BarChart3,
 };
 
 export default function Services({ locale, label, title, text }: ServicesProps) {
@@ -47,16 +31,13 @@ export default function Services({ locale, label, title, text }: ServicesProps) 
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => {
-            const Icon = icons[service.icon];
-
-            return (
+            const content = (
               <Card
-                key={service.title}
-                className="group rounded-3xl border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:border-emerald-200 hover:shadow-lg"
+                className="h-full rounded-3xl border-slate-200 bg-white shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-[1.015] group-hover:border-emerald-200 group-hover:shadow-lg"
               >
                 <CardContent className="p-6">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 transition-colors duration-300 group-hover:bg-emerald-100">
-                    <Icon className="h-6 w-6 text-emerald-700" />
+                    <ServiceIcon name={service.icon} className="h-6 w-6 text-emerald-700" />
                   </div>
                   <h3 className="mt-5 text-lg font-semibold text-slate-950">
                     {service.title}
@@ -66,6 +47,16 @@ export default function Services({ locale, label, title, text }: ServicesProps) 
                   </p>
                 </CardContent>
               </Card>
+            );
+
+            return service.href ? (
+              <Link key={service.title} href={service.href} className="group block">
+                {content}
+              </Link>
+            ) : (
+              <div key={service.title} className="group">
+                {content}
+              </div>
             );
           })}
         </div>

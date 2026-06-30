@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { serviceDetails, type ServiceSlug } from "@/data/services";
 import { site } from "@/data/site";
 import { routes, type Locale } from "./routes";
 
@@ -128,6 +129,41 @@ export const caseHistoryIndexMetadata: Record<Locale, Metadata> = {
     languages: routes.caseHistoryIndex,
   }),
 };
+
+export const serviceIndexMetadata: Record<Locale, Metadata> = {
+  it: createPageMetadata({
+    title: "Servizi IT | Governance, Service Management e Delivery Control",
+    description:
+      "Servizi di consulenza IT per governance, service management, project delivery control, audit, compliance e logging.",
+    path: routes.servicesIndex.it,
+    locale: "it",
+    languages: routes.servicesIndex,
+  }),
+  en: createPageMetadata({
+    title: "IT Services | Governance, Service Management and Delivery Control",
+    description:
+      "IT consulting services for governance, service management, project delivery control, audit, compliance and logging.",
+    path: routes.servicesIndex.en,
+    locale: "en",
+    languages: routes.servicesIndex,
+  }),
+};
+
+export function serviceMetadata(slug: ServiceSlug, locale: Locale): Metadata {
+  const service = serviceDetails[slug][locale];
+
+  return createPageMetadata({
+    title: `${service.title} | iTeamProject`,
+    description: service.text,
+    path: service.path[locale],
+    locale,
+    languages: service.path,
+    keywords:
+      locale === "it"
+        ? ["consulenza IT", service.title, "IT Governance", "IT Service Management"]
+        : ["IT consulting", service.title, "IT Governance", "IT Service Management"],
+  });
+}
 
 export const fashionRetailSdwanMetadata: Record<Locale, Metadata> = {
   it: createPageMetadata({
