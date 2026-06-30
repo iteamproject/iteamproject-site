@@ -36,6 +36,7 @@ export default function ServiceIndexPage({ locale }: ServiceIndexPageProps) {
         locale={locale}
         homeHref={routes.home[locale]}
         languageTargets={routes.servicesIndex}
+        activeHref={routes.servicesIndex[locale]}
       />
 
       <main className="min-h-screen bg-white text-slate-800">

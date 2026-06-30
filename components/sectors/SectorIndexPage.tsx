@@ -22,6 +22,7 @@ export default function SectorIndexPage({ locale }: SectorIndexPageProps) {
         locale={locale}
         homeHref={routes.home[locale]}
         languageTargets={routes.sectorsIndex}
+        activeHref={routes.sectorsIndex[locale]}
       />
 
       <main className="bg-white text-slate-800">

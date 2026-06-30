@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { navigationByLocale } from "@/data/navigation";
 import { site } from "@/data/site";
 import type { Locale } from "@/lib/routes";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -30,6 +31,7 @@ export default function Header({
   position = "sticky",
 }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const items = navItems.length > 0 ? navItems : navigationByLocale[locale];
   const positionClass =
     position === "fixed" ? "fixed inset-x-0 top-0" : "sticky top-0";
   const menuLabel =
@@ -52,10 +54,10 @@ export default function Header({
           </div>
         </Link>
 
-        {navItems.length > 0 ? (
+        {items.length > 0 ? (
           <nav className="hidden items-center gap-6 lg:flex">
-            {navItems.map((item) => (
-              <a
+            {items.map((item) => (
+              <Link
                 key={item.href}
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
@@ -65,7 +67,7 @@ export default function Header({
                 }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         ) : null}
@@ -73,7 +75,7 @@ export default function Header({
         <div className="flex items-center gap-3">
           <LanguageSwitcher locale={locale} targets={languageTargets} />
 
-          {navItems.length > 0 ? (
+          {items.length > 0 ? (
             <button
               type="button"
               aria-expanded={isMenuOpen}
@@ -87,11 +89,11 @@ export default function Header({
         </div>
       </div>
 
-      {navItems.length > 0 && isMenuOpen ? (
+      {items.length > 0 && isMenuOpen ? (
         <nav className="border-t border-emerald-200 bg-emerald-50 px-6 py-4 shadow-sm lg:hidden">
           <div className="mx-auto grid max-w-7xl gap-2">
-            {navItems.map((item) => (
-              <a
+            {items.map((item) => (
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
@@ -102,7 +104,7 @@ export default function Header({
                 }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </nav>

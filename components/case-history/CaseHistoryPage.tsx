@@ -23,6 +23,7 @@ export default function CaseHistoryPage({ slug, locale }: CaseHistoryPageProps) 
         locale={locale}
         homeHref={routes.home[locale]}
         languageTargets={caseHistory.path}
+        activeHref={routes.caseHistoryIndex[locale]}
       />
 
       <main className="bg-white text-slate-800">

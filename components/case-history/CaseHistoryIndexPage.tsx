@@ -34,6 +34,7 @@ export default function CaseHistoryIndexPage({ locale }: CaseHistoryIndexPagePro
         locale={locale}
         homeHref={routes.home[locale]}
         languageTargets={routes.caseHistoryIndex}
+        activeHref={routes.caseHistoryIndex[locale]}
       />
 
       <main className="min-h-screen bg-white text-slate-800">

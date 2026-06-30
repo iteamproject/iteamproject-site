@@ -33,6 +33,7 @@ export default function ServicePage({ slug, locale }: ServicePageProps) {
         locale={locale}
         homeHref={routes.home[locale]}
         languageTargets={service.path}
+        activeHref={routes.servicesIndex[locale]}
       />
 
       <main className="bg-white text-slate-800">

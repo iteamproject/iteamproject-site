@@ -24,6 +24,7 @@ export default function AboutPage({ locale }: AboutPageProps) {
         locale={locale}
         homeHref={routes.home[locale]}
         languageTargets={routes.about}
+        activeHref={routes.about[locale]}
       />
 
       <main className="bg-white text-slate-800">
