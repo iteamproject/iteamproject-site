@@ -21,6 +21,10 @@ export type CaseHistoryContent = {
     label: string;
     title: string;
     intro: string;
+    visual?: {
+      src: string;
+      alt: string;
+    };
     facts: {
       label: string;
       value: string;
@@ -67,6 +71,10 @@ export const caseHistories: Record<
           "Oltre 100 punti vendita, una sola rete: trasformazione SD-WAN per il Fashion Retail",
         intro:
           "Come una primaria azienda italiana del Fashion Retail ha ridotto i costi, aumentato la resilienza e centralizzato la governance della propria infrastruttura IT multi-sede.",
+        visual: {
+          src: "/images/case-history/sdwan-retail-network.jpg",
+          alt: "Schema tecnico di una rete SD-WAN multi-sede con monitoraggio centralizzato",
+        },
         facts: [
           { label: "Settore", value: "Fashion Retail" },
           { label: "Dimensione", value: "Oltre 100 punti vendita" },
@@ -177,6 +185,10 @@ export const caseHistories: Record<
         title: "Over 100 stores, one network: SD-WAN transformation for Fashion Retail",
         intro:
           "How a major Italian Fashion Retail company reduced costs, increased resilience and centralized governance across its multi-site IT infrastructure.",
+        visual: {
+          src: "/images/case-history/sdwan-retail-network.jpg",
+          alt: "Technical diagram of a multi-site SD-WAN network with centralized monitoring",
+        },
         facts: [
           { label: "Industry", value: "Fashion Retail" },
           { label: "Scale", value: "Over 100 stores" },
@@ -289,6 +301,10 @@ export const caseHistories: Record<
         title: "Governance IT e Service Management per un contesto multi-fornitore",
         intro:
           "Un percorso di assessment e riorganizzazione operativa per rendere più chiari responsabilità, livelli di servizio, escalation e controllo dei fornitori IT.",
+        visual: {
+          src: "/images/case-history/it-governance-model.jpg",
+          alt: "Schema di governance IT con priorità business, operations, fornitori, KPI e compliance",
+        },
         facts: [
           { label: "Settore", value: "Servizi / Organizzazione multi-fornitore" },
           { label: "Dimensione", value: "Azienda strutturata con sedi e fornitori esterni" },
@@ -390,6 +406,10 @@ export const caseHistories: Record<
         title: "IT Governance and Service Management for a multi-vendor environment",
         intro:
           "An assessment and operating model redesign to clarify responsibilities, service levels, escalation paths and vendor control.",
+        visual: {
+          src: "/images/case-history/it-governance-model.jpg",
+          alt: "IT governance model diagram with business priorities, operations, vendors, KPIs and compliance",
+        },
         facts: [
           { label: "Industry", value: "Services / Multi-vendor organization" },
           { label: "Scale", value: "Structured company with sites and external providers" },
