@@ -68,7 +68,7 @@ export default function Problems({
           <div className="mt-6">
             <Button
               asChild
-              className="rounded-2xl bg-slate-950 px-6 py-6 text-sm text-white transition-all duration-200 hover:scale-[1.03] hover:bg-slate-900 hover:shadow-lg active:scale-[0.98]"
+              className="w-full justify-center rounded-2xl bg-slate-950 px-6 py-6 text-sm text-white transition-all duration-200 hover:scale-[1.03] hover:bg-slate-900 hover:shadow-lg active:scale-[0.98] sm:w-auto"
             >
               <Link href={routes.contact[locale]}>{ctaLabel}</Link>
             </Button>

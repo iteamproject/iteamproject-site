@@ -37,7 +37,7 @@ export default function CaseHistoryTeaser({
           {cases.map((caseHistory) => (
             <article
               key={caseHistory.slug}
-              className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-md"
+              className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-md sm:p-7"
             >
               <div className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
                 {caseHistory.listing.category}
@@ -66,7 +66,7 @@ export default function CaseHistoryTeaser({
 
               <Link
                 href={caseHistory.path[locale]}
-                className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-900"
+                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-900 sm:w-fit"
               >
                 <span>{ctaLabel}</span>
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -77,7 +77,7 @@ export default function CaseHistoryTeaser({
 
         <Link
           href={routes.caseHistoryIndex[locale]}
-          className="mt-8 inline-flex items-center gap-2 rounded-2xl border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-800"
+          className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-800 sm:w-fit"
         >
           <span>{locale === "it" ? "Vedi tutte le case history" : "View all case studies"}</span>
           <ArrowRight aria-hidden="true" className="h-4 w-4" />

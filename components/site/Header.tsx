@@ -50,7 +50,7 @@ export default function Header({
           </div>
           <div className="text-sm font-medium text-slate-500">
             <span className="font-semibold text-emerald-700">{site.name}</span>
-            <span className="hidden sm:inline"> · {site.payoff}</span>
+            <span className="hidden 2xl:inline"> · {site.payoff}</span>
           </div>
         </Link>
 

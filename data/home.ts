@@ -134,7 +134,7 @@ export const homeCopyByLocale: Record<Locale, HomeCopy> = {
     problemsBridge:
       "If you recognize one of these issues, it is worth starting from an operational reading of the context: responsibilities, vendors, risks, priorities and metrics.",
     problemsCta: "Let's discuss your IT context",
-    caseHistoryLabel: "Case Study",
+    caseHistoryLabel: "Case Studies",
     caseHistoryTitle: "Real projects, concrete issues, measurable outcomes",
     caseHistoryText:
       "From multi-site infrastructure transformation to multi-vendor IT governance: concrete cases where method, coordination and control delivered readable outcomes.",
